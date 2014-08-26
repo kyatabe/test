@@ -82,6 +82,34 @@ function requestToInputValues(result,operator){
 	console.log('');
 }
 
+/**
+ * Main proccess functions
+ * 
+ */
+
+function inputValue(cb) {
+	var i = rl.createInterface(process.stdin,process.stdout, null);
+	i.question('? \n', function(answer){
+		i.close();
+		process.stdin.destroy();
+		return cb(null,answer);
+	});
+}
+
+/**
+ * Test function
+ *
+ */
+
+function inputByLineTest() {
+	var i = rl.createInterface(process.stdin,process.stdout, null);
+	i.question('This is input test. Please input some words and hit enter key.', function(answer){
+		console.log('You just typed that "' + answer + '"');
+		i.close();
+		process.stdin.destroy();
+	});
+}
+
 // #####################################################################################################################
 // ################################################### M A I N #########################################################
 // #####################################################################################################################
@@ -93,17 +121,25 @@ var calculator = new Calculator();
 var result,operator,value;
 console.log(calculator);
 
+// require readline module.
+var rl = require('readline');
+
 // output test
 
-calculator.requestToInputFirstValues();
-calculator.outputResult();
-calculator.requestToSelectOperators();
-calculator.requestToInputValues();
+//calculator.requestToInputFirstValues();
+//calculator.outputResult();
+//calculator.requestToSelectOperators();
+//calculator.requestToInputValues();
 
 /*
 readUserInput(function (err, name) {
 	console.log('Your name is ' + name);
 });
 */
+
+// input test
+inputValue(function(err,answer){
+	console.log('value is ' + answer);
+});
 
 // END
