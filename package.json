@@ -4,6 +4,7 @@
   "description": "Test",
   "main": "main.js",
   "dependencies": {
+    "readline": "*"
 	},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
