@@ -44,6 +44,21 @@ Calculator.prototype.outputResult = function(){
 // ############################################## F U N C T I O N S ####################################################
 // #####################################################################################################################
 
+function change(value, operaton, result){
+	switch(operaton){
+	case '+':
+		return add(value, result);
+	case '-':
+		return sub(value, result);
+	case '*':
+		return times(value, result);
+	case '/':
+		return divide(value, result);
+	default:
+		break;
+	}
+}
+
 /**
  * Main proccess functions
  * 
