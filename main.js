@@ -44,6 +44,14 @@ Calculator.prototype.outputResult = function(){
 // ############################################## F U N C T I O N S ####################################################
 // #####################################################################################################################
 
+function sub(value, result){
+	if(value !== 0){
+		return result - value;
+	}else{
+		throw new Error('value = 0 Error');
+	}
+}
+
 /**
  * Main proccess functions
  * 
